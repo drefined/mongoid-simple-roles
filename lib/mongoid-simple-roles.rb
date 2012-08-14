@@ -17,8 +17,9 @@ module Mongoid
         end
 
         def add_role(role)
-          self.roles = Array.new if self.roles.nil?
+          self.roles ||= []
           self.roles << role if role
+          self.roles.uniq!
         end
 
         def has_role?(role)

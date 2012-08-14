@@ -4,9 +4,11 @@ Very basic and simple roles system for mongoid v3. HEAVILY INSPIRED by [mongoid-
 
 ## Install
 
-  Add the following to Gemfile:
+Add the following to Gemfile:
 
-    gem "mongoid-simple-roles", "0.0.1"
+```ruby
+gem "mongoid-simple-roles", "0.0.1"
+```
 
 ## Usage
 
@@ -24,15 +26,26 @@ end
 ```ruby
 u = User.create(:name => "Drefined", with_roles: ['superadmin', 'admin', 'user'])
 
-u.roles # => ['superadmin', 'admin', 'user']
+u.roles
+=> ['superadmin', 'admin', 'user']
 
-User.find_roles('superadmin') # => u
+User.find_roles('superadmin')
+=> u
 
 u2 = User.new(:name => "Quicksorter")
-u2.add_role = 'admin'
+u2.add_role('admin')
+u2.add_role('user')
 u2.save
 
-User.find_roles('admin') # => [u, u2]
+u2.has_role?('admin')
+=> true
+
+u2.remove_role('user')
+u2.has_role?('user')
+=> false
+
+User.find_roles('admin')
+=> [u, u2]
 ```
 
 ## Questions or Problems?

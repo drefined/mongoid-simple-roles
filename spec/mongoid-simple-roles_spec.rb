@@ -33,6 +33,18 @@ describe "A Roleable model" do
     user.remove_role(role)
     user.has_role?(role).should_not be true
   end
+
+  it "should be able to call add_role multiple times" do
+    user.add_role('admin')
+    user.add_role('user')
+    user.roles.count.should be 2
+  end
+
+  it "should only contain unique roles" do
+    user.add_role('superadmin')
+    user.add_role('superadmin')
+    user.roles.count.should be 1
+  end
 end
 
 describe "A Roleable model with roles assigned" do
