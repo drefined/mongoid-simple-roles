@@ -50,4 +50,4 @@ User.find_roles('admin')
 
 ## Questions or Problems?
 
-If you have any issue or feature request with/for rolify, please add an [issue on GitHub](https://github.com/drefined/mongoid-simple-roles/issues) or fork the project and send a pull request.
+If you have any issue or feature request with/for mongoid-simple-roles, please add an [issue on GitHub](https://github.com/drefined/mongoid-simple-roles/issues) or fork the project and send a pull request.
