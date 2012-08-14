@@ -1,0 +1,6 @@
+test:
+  sessions:
+    default:
+      database: mongoid-simple-roles
+      hosts:
+        - localhost:27017
